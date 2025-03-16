@@ -5,6 +5,7 @@ export default defineConfig({
   title: "SeaRobot 文档中心",
   description: "SeaRobot 产品技术文档",
   lang: 'zh-CN',
+  base: '/searobot-docs/',
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
