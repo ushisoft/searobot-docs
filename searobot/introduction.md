@@ -1,12 +1,12 @@
 # 产品简介
 
-![SeaRobot 01](/images/searobot/media/image1.png)
+![SeaRobot 01](/images/searobot/image1.png)
 
 SeaRobot 01是一款低速自主移动机器人系统。它采用四轮差速驱动实现移动，最大速度可达1.5m/s，续航时间约6小时。
 
 ## 产品规格
 
-![SeaRobot 01 外观](/images/searobot/media/image2.png)
+![SeaRobot 01 外观](/images/searobot/image2.png)
 
 规格 | 参数
 --- | ---
