@@ -73,51 +73,6 @@
 示例：
 - Lsp=200, Rsp=193：`ED DE 00 00 02 12 01 00 C8 00 C1 00 00 00 69 03 BD BC`
 
-### 底盘数据指令控制、位置模式(ID=0x02)
-
-| 内容 | 字节长度 | 备注 |
-|------|----------|------|
-| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
-| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
-| FRAME-ID | 1(uint8) | 帧ID（0x02） |
-| FRAME-LEN | 1(uint8) | 帧长度（0x12） |
-| Data0 | 2(uint16) | 0x0002（位置模式） |
-| Data1 | 4(float) | X轴位置，单位：mm |
-| Data2 | 4(float) | Y轴位置，单位：mm |
-| Data3 | 4(float) | Z轴角度，单位：rad |
-| Check | 2(uint16) | 校验（从FRAME-HEAD到Data的和） |
-| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
-
-### 底盘数据指令控制、姿态模式(ID=0x02)
-
-| 内容 | 字节长度 | 备注 |
-|------|----------|------|
-| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
-| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
-| FRAME-ID | 1(uint8) | 帧ID（0x02） |
-| FRAME-LEN | 1(uint8) | 帧长度（0x12） |
-| Data0 | 2(uint16) | 0x0003（姿态模式） |
-| Data1 | 4(float) | Roll角度，单位：rad |
-| Data2 | 4(float) | Pitch角度，单位：rad |
-| Data3 | 4(float) | Yaw角度，单位：rad |
-| Check | 2(uint16) | 校验（从FRAME-HEAD到Data的和） |
-| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
-
-### 底盘数据指令控制、复位模式(ID=0x02)
-
-| 内容 | 字节长度 | 备注 |
-|------|----------|------|
-| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
-| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
-| FRAME-ID | 1(uint8) | 帧ID（0x02） |
-| FRAME-LEN | 1(uint8) | 帧长度（0x12） |
-| Data0 | 2(uint16) | 0x0004（复位模式） |
-| Data1 | 2(uint16) | 保留 |
-| Data2 | 2(uint16) | 保留 |
-| Data3 | 2(uint16) | 保留 |
-| Check | 2(uint16) | 校验（从FRAME-HEAD到Data的和） |
-| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
-
 ### 急停设置(ID=0x03)
 
 | 内容 | 字节长度 | 备注 |
