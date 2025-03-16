@@ -1,0 +1,1 @@
+import{_ as i,c as e,o,ae as t}from"./chunks/framework.COrXKI8X.js";const m=JSON.parse('{"title":"操作流程","description":"","frontmatter":{},"headers":[],"relativePath":"app/process.md","filePath":"app/process.md"}'),a={name:"app/process.md"};function r(s,l,n,p,_,c){return o(),e("div",null,l[0]||(l[0]=[t("",2)]))}const f=i(a,[["render",r]]);export{m as __pageData,f as default};
