@@ -2,7 +2,7 @@
 
 ## 遥控器操作
 
-![遥控器说明](../attachment/images-searobot/media/image7.png)
+![遥控器说明](/images/searobot/media/image7.png)
 
 ### 遥控器功能介绍
 
