@@ -32,8 +32,14 @@ export default defineConfig({
         {
           text: 'APP 2.0.0',
           items: [
-            { text: '功能介绍', link: '/app/features' },
-            { text: '使用指南', link: '/app/guide' }
+            { text: '注意事项', link: '/app/notices' },
+            { text: '操作流程', link: '/app/process' },
+            { text: '连接机器人', link: '/app/connection' },
+            { text: '地图相关操作', link: '/app/map' },
+            { text: '导航相关操作', link: '/app/navigation' },
+            { text: '系统相关', link: '/app/system' },
+            { text: '状态显示与控制', link: '/app/status' },
+            { text: '常见故障分析', link: '/app/troubleshooting' }
           ]
         }
       ]

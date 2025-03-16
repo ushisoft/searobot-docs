@@ -2,8 +2,8 @@
 
 ## 参数配置
 
-1. 在APP首页，点击左下角的点管理图标，点击【导航配置】，进入导航配置功能界面
-   ![导航配置](../attachment/images/media/image55.png)
+1. 在APP首页，点击左下角的 ![](/images/media/image24.png) 点击【导航配置】，进入导航配置功能界面
+   ![导航配置](/images/media/image55.png)
 
 2. 参数修改方法：
    - 点击表格行，进入编辑状态
@@ -17,15 +17,15 @@
 
 ## 录包管理
 
-1. 在APP首页，点击左下角的点管理图标，点击【录包管理】，进入【录包管理】功能界面
-   ![录包管理](../attachment/images/media/image56.png)
+1. 在APP首页，点击左下角的 ![](/images/media/image24.png) 点击【录包管理】，进入【录包管理】功能界面
+   ![录包管理](/images/media/image56.png)
 
 2. 在此界面可查看已录制完成的包名信息，以及可以删除废弃的包
 
 ## 系统信息
 
-1. 在APP首页，点击左下角的点管理图标，点击【系统信息】，进入【系统信息】功能界面
-   ![系统信息](../attachment/images/media/image57.png)
+1. 在APP首页，点击左下角的 ![](/images/media/image24.png) 点击【系统信息】，进入【系统信息】功能界面
+   ![系统信息](/images/media/image57.png)
 
 2. 功能说明：
    - **固件升级**：查看APP版本，固件版本信息，进行固件升级
