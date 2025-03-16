@@ -219,683 +219,178 @@
 
 底盘启动后会自动上传该帧，可使用【20ms 底盘数据上传】关闭上传。
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th colspan="3">备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td colspan="3">帧ID（0x81）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td colspan="3">帧长度</td>
-  </tr>
-  <tr>
-    <td>Data0</td>
-    <td>2(uint16)</td>
-    <td colspan="3">电压：单位0.1V</td>
-  </tr>
-  <tr>
-    <td rowspan="16">Data1</td>
-    <td rowspan="16">2(uint16)</td>
-    <td colspan="3">底盘状态</td>
-  </tr>
-  <tr>
-    <td>Bit0</td>
-    <td colspan="2">硬件急停（1表示急停）</td>
-  </tr>
-  <tr>
-    <td>Bit1</td>
-    <td colspan="2">遥控急停（1表示急停）</td>
-  </tr>
-  <tr>
-    <td>Bit2</td>
-    <td colspan="2">软件急停（1表示急停）</td>
-  </tr>
-  <tr>
-    <td>Bit3</td>
-    <td colspan="2">遥控掉线（1表示掉线）</td>
-  </tr>
-  <tr>
-    <td>Bit4</td>
-    <td colspan="2">前驱动器掉线（1表示掉线）</td>
-  </tr>
-  <tr>
-    <td>Bit5</td>
-    <td colspan="2">后驱动器掉线（1表示掉线）</td>
-  </tr>
-  <tr>
-    <td>Bit6</td>
-    <td colspan="2">前左驱动器错误（1表示错误）</td>
-  </tr>
-  <tr>
-    <td>Bit7</td>
-    <td colspan="2">前右驱动器错误（1表示错误）</td>
-  </tr>
-  <tr>
-    <td>Bit8</td>
-    <td colspan="2">后左驱动器错误（1表示错误）</td>
-  </tr>
-  <tr>
-    <td>Bit9</td>
-    <td colspan="2">后右驱动器错误（1表示错误）</td>
-  </tr>
-  <tr>
-    <td>Bit10</td>
-    <td colspan="2">前防撞杆（1表示触发）</td>
-  </tr>
-  <tr>
-    <td>Bit11</td>
-    <td colspan="2">后防撞杆（1表示触发）</td>
-  </tr>
-  <tr>
-    <td>Bit12</td>
-    <td colspan="2">回冲设置（1表示开启）</td>
-  </tr>
-  <tr>
-    <td>Bit13-14</td>
-    <td colspan="2">保留</td>
-  </tr>
-  <tr>
-    <td>Bit15</td>
-    <td colspan="2">保留</td>
-  </tr>
-  <tr>
-    <td>Data2</td>
-    <td>2(uint16)</td>
-    <td colspan="3">回冲状态（数值）<br>0：寻找中心<br>1：已找到中心<br>2：信号丢失<br>3：铜片接触<br>4：对接成功<br>5：对接错误<br>6：寻充超时<br>7：退出充电状态</td>
-  </tr>
-  <tr>
-    <td>Data3</td>
-    <td>2(int16)</td>
-    <td colspan="3">Vx:线速度，单位：mm/s</td>
-  </tr>
-  <tr>
-    <td>Data4</td>
-    <td>2(int16)</td>
-    <td colspan="3">Vz:角速度，单位：0.001rad/s</td>
-  </tr>
-  <tr>
-    <td>Data5</td>
-    <td>2(int16)</td>
-    <td colspan="3">前左轮速度，单位：mm/s</td>
-  </tr>
-  <tr>
-    <td>Data6</td>
-    <td>2(int16)</td>
-    <td colspan="3">前右轮速度，单位：mm/s</td>
-  </tr>
-  <tr>
-    <td>Data7</td>
-    <td>2(int16)</td>
-    <td colspan="3">后左轮速度，单位：mm/s</td>
-  </tr>
-  <tr>
-    <td>Data8</td>
-    <td>2(int16)</td>
-    <td colspan="3">后右轮速度，单位：mm/s</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td colspan="3">校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 | | |
+|------|----------|------|-----------|------------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） | | |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） | | |
+| FRAME-ID | 1(uint8) | 帧ID（0x81） | | |
+| FRAME-LEN | 1(uint8) | 帧长度 | | |
+| Data0 | 2(uint16) | 电压：单位0.1V | | |
+| Data1 | 2(uint16) | | 底盘状态 | |
+| | | | Bit0 | 硬件急停（1表示急停） |
+| | | | Bit1 | 遥控急停（1表示急停） |
+| | | | Bit2 | 软件急停（1表示急停） |
+| | | | Bit3 | 遥控掉线（1表示掉线） |
+| | | | Bit4 | 前驱动器掉线（1表示掉线） |
+| | | | Bit5 | 后驱动器掉线（1表示掉线） |
+| | | | Bit6 | 前左驱动器错误（1表示错误） |
+| | | | Bit7 | 前右驱动器错误（1表示错误） |
+| | | | Bit8 | 后左驱动器错误（1表示错误） |
+| | | | Bit9 | 后右驱动器错误（1表示错误） |
+| | | | Bit10 | 前防撞杆（1表示触发） |
+| | | | Bit11 | 后防撞杆（1表示触发） |
+| | | | Bit12 | 回冲设置（1表示开启） |
+| | | | Bit13-14 | 保留 |
+| | | | Bit15 | 保留 |
+| Data2 | 2(uint16) | 回冲状态（数值）<br>0：寻找中心<br>1：已找到中心<br>2：信号丢失<br>3：铜片接触<br>4：对接成功<br>5：对接错误<br>6：寻充超时<br>7：退出充电状态 | | |
+| Data3 | 2(int16) | Vx:线速度，单位：mm/s | | |
+| Data4 | 2(int16) | Vz:角速度，单位：0.001rad/s | | |
+| Data5 | 2(int16) | 前左轮速度，单位：mm/s | | |
+| Data6 | 2(int16) | 前右轮速度，单位：mm/s | | |
+| Data7 | 2(int16) | 后左轮速度，单位：mm/s | | |
+| Data8 | 2(int16) | 后右轮速度，单位：mm/s | | |
+| Check | 2(uint16) | 校验（从Head到Data的和） | | |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) | | |
 
 ### 驱动器信息上传(ID=0xB0)
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th colspan="3">备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td colspan="3">帧ID（0xB0）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td colspan="3">帧长度</td>
-  </tr>
-  <tr>
-    <td rowspan="16">Data0</td>
-    <td rowspan="16">2(uint16)</td>
-    <td colspan="3">驱动器（前左）错误状态</td>
-  </tr>
-  <tr>
-    <td>Bit0</td>
-    <td colspan="2">电池欠压</td>
-  </tr>
-  <tr>
-    <td>Bit1</td>
-    <td colspan="2">位置异常</td>
-  </tr>
-  <tr>
-    <td>Bit2</td>
-    <td colspan="2">霍尔错误</td>
-  </tr>
-  <tr>
-    <td>Bit3</td>
-    <td colspan="2">过流</td>
-  </tr>
-  <tr>
-    <td>Bit4</td>
-    <td colspan="2">超载</td>
-  </tr>
-  <tr>
-    <td>Bit5</td>
-    <td colspan="2">EEPROM故障</td>
-  </tr>
-  <tr>
-    <td>Bit6</td>
-    <td colspan="2">IGBT故障</td>
-  </tr>
-  <tr>
-    <td>Bit7</td>
-    <td colspan="2">驱动器过热</td>
-  </tr>
-  <tr>
-    <td>Bit8</td>
-    <td colspan="2">电机缺陷</td>
-  </tr>
-  <tr>
-    <td>Bit9</td>
-    <td colspan="2">电源超差</td>
-  </tr>
-  <tr>
-    <td>Bit10</td>
-    <td colspan="2">速度超差</td>
-  </tr>
-  <tr>
-    <td>Bit11</td>
-    <td colspan="2">电机过热</td>
-  </tr>
-  <tr>
-    <td>Bit12</td>
-    <td colspan="2">电源过压</td>
-  </tr>
-  <tr>
-    <td>Bit13</td>
-    <td colspan="2">飞车故障</td>
-  </tr>
-  <tr>
-    <td>Bit14</td>
-    <td colspan="2">驱动器过热</td>
-  </tr>
-  <tr>
-    <td>Data1</td>
-    <td>2(uint16)</td>
-    <td colspan="3">驱动器（前右）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样</td>
-  </tr>
-  <tr>
-    <td>Data2</td>
-    <td>2(uint16)</td>
-    <td colspan="3">驱动器（后左）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样</td>
-  </tr>
-  <tr>
-    <td>Data3</td>
-    <td>2(uint16)</td>
-    <td colspan="3">驱动器（后右）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样</td>
-  </tr>
-  <tr>
-    <td rowspan="14">Data4</td>
-    <td rowspan="14">2(uint16)</td>
-    <td colspan="3">电机状态（前左）</td>
-  </tr>
-  <tr>
-    <td>Bit0</td>
-    <td colspan="2">伺服启动</td>
-  </tr>
-  <tr>
-    <td>Bit1</td>
-    <td colspan="2">伺服运行</td>
-  </tr>
-  <tr>
-    <td>Bit2</td>
-    <td colspan="2">零速运行</td>
-  </tr>
-  <tr>
-    <td>Bit3</td>
-    <td colspan="2">目标速度到达</td>
-  </tr>
-  <tr>
-    <td>Bit4</td>
-    <td colspan="2">目标位置到达</td>
-  </tr>
-  <tr>
-    <td>Bit5</td>
-    <td colspan="2">转矩限制中</td>
-  </tr>
-  <tr>
-    <td>Bit6</td>
-    <td colspan="2">警告</td>
-  </tr>
-  <tr>
-    <td>Bit7</td>
-    <td colspan="2">制动输出</td>
-  </tr>
-  <tr>
-    <td>Bit8</td>
-    <td colspan="2">原点恢复完成</td>
-  </tr>
-  <tr>
-    <td>Bit9</td>
-    <td colspan="2">超过载门槛</td>
-  </tr>
-  <tr>
-    <td>Bit10</td>
-    <td colspan="2">错误警告</td>
-  </tr>
-  <tr>
-    <td>Bit11</td>
-    <td colspan="2">命令完成</td>
-  </tr>
-  <tr>
-    <td>Bit12</td>
-    <td colspan="2">反向堵转</td>
-  </tr>
-  <tr>
-    <td>Data5</td>
-    <td>2(uint16)</td>
-    <td colspan="3">电机状态（前右）<br>内容同【Data4 电机状态（前左）】一样</td>
-  </tr>
-  <tr>
-    <td>Data6</td>
-    <td>2(uint16)</td>
-    <td colspan="3">电机状态（后左）<br>内容同【Data4 电机状态（前左）】一样</td>
-  </tr>
-  <tr>
-    <td>Data7</td>
-    <td>2(uint16)</td>
-    <td colspan="3">电机状态（后右）<br>内容同【Data4 电机状态（前左）】一样</td>
-  </tr>
-  <tr>
-    <td>Data8</td>
-    <td>2(int16)</td>
-    <td colspan="3">电流（前左）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data9</td>
-    <td>2(int16)</td>
-    <td colspan="3">电流（前右）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data10</td>
-    <td>2(int16)</td>
-    <td colspan="3">电流（后左）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data11</td>
-    <td>2(int16)</td>
-    <td colspan="3">电流（后右）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data12</td>
-    <td>2(uint16)</td>
-    <td colspan="3">最大电流值（前左）（单位：0.1A，只取正值）</td>
-  </tr>
-  <tr>
-    <td>Data13</td>
-    <td>2(uint16)</td>
-    <td colspan="3">最大电流值（前右）（单位：0.1A，只取正值）</td>
-  </tr>
-  <tr>
-    <td>Data14</td>
-    <td>2(uint16)</td>
-    <td colspan="3">最大电流值（后左）（单位：0.1A，只取正值）</td>
-  </tr>
-  <tr>
-    <td>Data15</td>
-    <td>2(uint16)</td>
-    <td colspan="3">最大电流值（后右）（单位：0.1A，只取正值）</td>
-  </tr>
-  <tr>
-    <td>Data16</td>
-    <td>2(uint16)</td>
-    <td colspan="3">温度（前）（单位：0.1摄氏度）</td>
-  </tr>
-  <tr>
-    <td>Data17</td>
-    <td>2(uint16)</td>
-    <td colspan="3">温度（后）（单位：0.1摄氏度）</td>
-  </tr>
-  <tr>
-    <td>Data18</td>
-    <td>2(uint16)</td>
-    <td colspan="3">驱动器电压（前）（单位：0.1V）</td>
-  </tr>
-  <tr>
-    <td>Data19</td>
-    <td>2(uint16)</td>
-    <td colspan="3">驱动器电压（后）（单位：0.1V）</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td colspan="3">校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td colspan="3">帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 | | |
+|------|----------|------|-----------|------------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） | | |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） | | |
+| FRAME-ID | 1(uint8) | 帧ID（0xB0） | | |
+| FRAME-LEN | 1(uint8) | 帧长度 | | |
+| Data0 | 2(uint16) | | 驱动器（前左）错误状态 | |
+| | | | Bit0 | 电池欠压 |
+| | | | Bit1 | 位置异常 |
+| | | | Bit2 | 霍尔错误 |
+| | | | Bit3 | 过流 |
+| | | | Bit4 | 超载 |
+| | | | Bit5 | EEPROM故障 |
+| | | | Bit6 | IGBT故障 |
+| | | | Bit7 | 驱动器过热 |
+| | | | Bit8 | 电机缺陷 |
+| | | | Bit9 | 电源超差 |
+| | | | Bit10 | 速度超差 |
+| | | | Bit11 | 电机过热 |
+| | | | Bit12 | 电源过压 |
+| | | | Bit13 | 飞车故障 |
+| | | | Bit14 | 驱动器过热 |
+| | | | Bit15 | 保留 |
+| Data1 | 2(uint16) | 驱动器（前右）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样 | | |
+| Data2 | 2(uint16) | 驱动器（后左）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样 | | |
+| Data3 | 2(uint16) | 驱动器（后右）错误状态<br>内容同【Data0 驱动器（前左）错误状态】一样 | | |
+| Data4 | 2(uint16) | | 电机状态（前左） | |
+| | | | Bit0 | 伺服启动 |
+| | | | Bit1 | 伺服运行 |
+| | | | Bit2 | 零速运行 |
+| | | | Bit3 | 目标速度到达 |
+| | | | Bit4 | 目标位置到达 |
+| | | | Bit5 | 转矩限制中 |
+| | | | Bit6 | 警告 |
+| | | | Bit7 | 制动输出 |
+| | | | Bit8 | 原点恢复完成 |
+| | | | Bit9 | 超过载门槛 |
+| | | | Bit10 | 错误警告 |
+| | | | Bit11 | 命令完成 |
+| | | | Bit12 | 反向堵转 |
+| | | | Bit13 | 正向堵转 |
+| Data5 | 2(uint16) | 电机状态（前右）<br>内容同【Data4 电机状态（前左）】一样 | | |
+| Data6 | 2(uint16) | 电机状态（后左）<br>内容同【Data4 电机状态（前左）】一样 | | |
+| Data7 | 2(uint16) | 电机状态（后右）<br>内容同【Data4 电机状态（前左）】一样 | | |
+| Data8 | 2(int16) | 电流（前左）（单位：0.1A） | | |
+| Data9 | 2(int16) | 电流（前右）（单位：0.1A） | | |
+| Data10 | 2(int16) | 电流（后左）（单位：0.1A） | | |
+| Data11 | 2(int16) | 电流（后右）（单位：0.1A） | | |
+| Data12 | 2(uint16) | 最大电流值（前左）（单位：0.1A，只取正值） | | |
+| Data13 | 2(uint16) | 最大电流值（前右）（单位：0.1A，只取正值） | | |
+| Data14 | 2(uint16) | 最大电流值（后左）（单位：0.1A，只取正值） | | |
+| Data15 | 2(uint16) | 最大电流值（后右）（单位：0.1A，只取正值） | | |
+| Data16 | 2(uint16) | 温度（前）（单位：0.1摄氏度） | | |
+| Data17 | 2(uint16) | 温度（后）（单位：0.1摄氏度） | | |
+| Data18 | 2(uint16) | 驱动器电压（前）（单位：0.1V） | | |
+| Data19 | 2(uint16) | 驱动器电压（后）（单位：0.1V） | | |
+| Check | 2(uint16) | 校验（从Head到Data的和） | | |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) | | |
 
 ### 驱动器电流、电压信息上传(ID=0xB1)
 
 该帧可以开启自动上传，使用【读取驱动器的信息（驱动器电流、电压）(ID=0xB1)】开启关闭上传。
 
-<table border="0" cellpadding="4">
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td>帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td>帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td>帧ID（0xB1）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td>帧长度</td>
-  </tr>
-  <tr>
-    <td>Data0</td>
-    <td>2(int16)</td>
-    <td>电流（前左）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data1</td>
-    <td>2(int16)</td>
-    <td>电流（前右）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data2</td>
-    <td>2(int16)</td>
-    <td>电流（后左）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data3</td>
-    <td>2(int16)</td>
-    <td>电流（后右）（单位：0.1A）</td>
-  </tr>
-  <tr>
-    <td>Data4</td>
-    <td>2(uint16)</td>
-    <td>驱动器电压（前）（单位：0.1V）</td>
-  </tr>
-  <tr>
-    <td>Data5</td>
-    <td>2(uint16)</td>
-    <td>驱动器电压（后）（单位：0.1V）</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td>校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td>帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 |
+|------|----------|------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
+| FRAME-ID | 1(uint8) | 帧ID（0xB1） |
+| FRAME-LEN | 1(uint8) | 帧长度 |
+| Data0 | 2(int16) | 电流（前左）（单位：0.1A） |
+| Data1 | 2(int16) | 电流（前右）（单位：0.1A） |
+| Data2 | 2(int16) | 电流（后左）（单位：0.1A） |
+| Data3 | 2(int16) | 电流（后右）（单位：0.1A） |
+| Data4 | 2(uint16) | 驱动器电压（前）（单位：0.1V） |
+| Data5 | 2(uint16) | 驱动器电压（后）（单位：0.1V） |
+| Check | 2(uint16) | 校验（从Head到Data的和） |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
 
 ### 程序版本信息上传(ID=0X87)
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th>备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td>帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td>帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td>帧ID（0x87）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td>帧长度</td>
-  </tr>
-  <tr>
-    <td>Data</td>
-    <td>2(uint16)</td>
-    <td>值</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td>校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td>帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 |
+|------|----------|------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
+| FRAME-ID | 1(uint8) | 帧ID（0x87） |
+| FRAME-LEN | 1(uint8) | 帧长度 |
+| Data | 2(uint16) | 值 |
+| Check | 2(uint16) | 校验（从Head到Data的和） |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
 
 ### 硬件版本信息上传(ID=0x88)
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th>备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td>帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td>帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td>帧ID（0x88）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td>帧长度</td>
-  </tr>
-  <tr>
-    <td>Data</td>
-    <td>N</td>
-    <td>接收到16进制需要转化成ASCII码对应的字母</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td>校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td>帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 |
+|------|----------|------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
+| FRAME-ID | 1(uint8) | 帧ID（0x88） |
+| FRAME-LEN | 1(uint8) | 帧长度 |
+| Data | N | 接收到16进制需要转化成ASCII码对应的字母 |
+| Check | 2(uint16) | 校验（从Head到Data的和） |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
 
 示例：
 - `ED DE 00 00 88 22 5A 48 57 4C 2D 62 72 75 73 68 2D 6D 6F 74 6F 72 2D 63 68 61 73 73 69 73 83 0B BD BC`（对应的ASCII码：ZKWL-brush-motor-chassis）
 
 ### 底盘信息上传(ID=0X89)
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th>备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td>帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td>帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td>帧ID（0x89）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td>帧长度</td>
-  </tr>
-  <tr>
-    <td>Data0</td>
-    <td>2(uint16)</td>
-    <td>轮距</td>
-  </tr>
-  <tr>
-    <td>Data1</td>
-    <td>2(uint16)</td>
-    <td>轴距</td>
-  </tr>
-  <tr>
-    <td>Data2</td>
-    <td>2(uint16)</td>
-    <td>轮径</td>
-  </tr>
-  <tr>
-    <td>Data3</td>
-    <td>2(uint16)</td>
-    <td>减速比</td>
-  </tr>
-  <tr>
-    <td>Data4</td>
-    <td>2(uint16)</td>
-    <td>编码器线数</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td>校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td>帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 |
+|------|----------|------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
+| FRAME-ID | 1(uint8) | 帧ID（0x89） |
+| FRAME-LEN | 1(uint8) | 帧长度 |
+| Data0 | 2(uint16) | 轮距 |
+| Data1 | 2(uint16) | 轴距 |
+| Data2 | 2(uint16) | 轮径 |
+| Data3 | 2(uint16) | 减速比 |
+| Data4 | 2(uint16) | 编码器线数 |
+| Check | 2(uint16) | 校验（从Head到Data的和） |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
 
 示例：
 - `ED DE 00 00 89 12 D5 02 F4 01 AA 00 1E 00 E8 03 E5 05 BD BC`; D5 02：轮距725 F4 01：轴距500 AA 00：轮径170 1E 00：减速比30 E8 03：编码器线数1000
 
 ### 出货日期信息上传(ID=0X8A)
 
-<table border="0" cellpadding="4">
-  <tr>
-    <th>内容</th>
-    <th>字节长度</th>
-    <th>备注</th>
-  </tr>
-  <tr>
-    <td>FRAME-HEAD</td>
-    <td>2(uint16)</td>
-    <td>帧头（0xDEED）</td>
-  </tr>
-  <tr>
-    <td>FRAME-NUMS</td>
-    <td>2(uint16)</td>
-    <td>帧序号（递增，可用来记录发送的次数）</td>
-  </tr>
-  <tr>
-    <td>FRAME-ID</td>
-    <td>1(uint8)</td>
-    <td>帧ID（0x8A）</td>
-  </tr>
-  <tr>
-    <td>FRAME-LEN</td>
-    <td>1(uint8)</td>
-    <td>帧长度</td>
-  </tr>
-  <tr>
-    <td>Data0</td>
-    <td>1(uint8)</td>
-    <td>年</td>
-  </tr>
-  <tr>
-    <td>Data1</td>
-    <td>1(uint8)</td>
-    <td>月</td>
-  </tr>
-  <tr>
-    <td>Data2</td>
-    <td>1(uint8)</td>
-    <td>日</td>
-  </tr>
-  <tr>
-    <td>Check</td>
-    <td>2(uint16)</td>
-    <td>校验（从Head到Data的和）</td>
-  </tr>
-  <tr>
-    <td>FRAME-END</td>
-    <td>2(uint16)</td>
-    <td>帧尾(0xBCBD)</td>
-  </tr>
-</table>
+| 内容 | 字节长度 | 备注 |
+|------|----------|------|
+| FRAME-HEAD | 2(uint16) | 帧头（0xDEED） |
+| FRAME-NUMS | 2(uint16) | 帧序号（递增，可用来记录发送的次数） |
+| FRAME-ID | 1(uint8) | 帧ID（0x8A） |
+| FRAME-LEN | 1(uint8) | 帧长度 |
+| Data0 | 1(uint8) | 年 |
+| Data1 | 1(uint8) | 月 |
+| Data2 | 1(uint8) | 日 |
+| Check | 2(uint16) | 校验（从Head到Data的和） |
+| FRAME-END | 2(uint16) | 帧尾(0xBCBD) |
 
 示例：
 - `ED DE 00 00 8A 0D 18 01 02 7D 02 BD BC`; 24年1月2日
