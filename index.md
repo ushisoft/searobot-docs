@@ -11,8 +11,14 @@ hero:
       text: SeaRobot 01 文档
       link: /searobot/introduction
     - theme: alt
+      text: GT-01 Mini 文档
+      link: /gt01/introduction
+    - theme: alt
+      text: RTK 导航指南
+      link: /rtk-navigation/introduction
+    - theme: alt
       text: APP 使用指南
-      link: /app/features
+      link: /app/process
 
 features:
   - icon: 🚀
@@ -27,5 +33,11 @@ features:
   - icon: 🔋
     title: 超长续航
     details: 80KG超大载重，3小时长续航，电池快速更换，多路电压输出，为外设供电
+  - icon: 🛤️
+    title: 履带式底盘
+    details: GT-01 Mini系列履带底盘，适应崎岖地形，提供强大的牵引力和稳定性
+  - icon: 📡
+    title: RTK高精度定位
+    details: 厘米级精度的RTK导航系统，实现精确的轨迹规划和自主导航功能
 ---
 
