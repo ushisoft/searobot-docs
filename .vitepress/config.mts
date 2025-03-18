@@ -11,9 +11,9 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: 'SeaRobot 01', link: '/searobot/' },
+      { text: 'APP 2.0.0', link: '/app/' },
       { text: 'GT-01 Mini', link: '/gt01/' },
-      { text: 'RTK 导航', link: '/rtk-navigation/' },
-      { text: 'APP 2.0.0', link: '/app/' }
+      { text: 'RTK导航', link: '/rtk-navigation/' }
     ],
 
     sidebar: {
@@ -30,30 +30,6 @@ export default defineConfig({
           ]
         }
       ],
-      '/gt01/': [
-        {
-          text: 'GT-01 Mini 系列',
-          items: [
-            { text: '产品简介', link: '/gt01/introduction' },
-            { text: '车体部件', link: '/gt01/components' },
-            { text: '操作说明', link: '/gt01/operation' },
-            { text: '通讯协议', link: '/gt01/protocol' },
-            { text: '注意事项', link: '/gt01/precautions' },
-            { text: '常见问题', link: '/gt01/faq' }
-          ]
-        }
-      ],
-      '/rtk-navigation/': [
-        {
-          text: 'RTK 导航系统',
-          items: [
-            { text: '系统介绍', link: '/rtk-navigation/introduction' },
-            { text: '界面操作', link: '/rtk-navigation/interface' },
-            { text: '操作流程', link: '/rtk-navigation/operation' },
-            { text: '故障排除', link: '/rtk-navigation/troubleshooting' }
-          ]
-        }
-      ],
       '/app/': [
         {
           text: 'APP 2.0.0',
@@ -66,6 +42,33 @@ export default defineConfig({
             { text: '系统相关', link: '/app/system' },
             { text: '状态显示与控制', link: '/app/status' },
             { text: '常见故障分析', link: '/app/troubleshooting' }
+          ]
+        }
+      ],
+      '/gt01/': [
+        {
+          text: 'GT-01 Mini 系列',
+          items: [
+            { text: '产品简介', link: '/gt01/introduction' },
+            { text: '车体部件', link: '/gt01/components' },
+            { text: '操作说明', link: '/gt01/operation' },
+            { text: '通讯协议', link: '/gt01/protocol' },
+            { text: 'ROS通讯包使用说明', link: '/gt01/ros' },
+            { text: '注意事项', link: '/gt01/notice' },
+            { text: '常见问题', link: '/gt01/faq' }
+          ]
+        }
+      ],
+      '/rtk-navigation/': [
+        {
+          text: 'RTK 导航界面',
+          items: [
+            { text: '使用须知', link: '/rtk-navigation/notices' },
+            { text: '界面概述', link: '/rtk-navigation/overview' },
+            { text: '连接设置', link: '/rtk-navigation/connection' },
+            { text: '轨迹录制', link: '/rtk-navigation/recording' },
+            { text: '导航功能', link: '/rtk-navigation/navigation' },
+            { text: '开源导航协议', link: '/rtk-navigation/protocol' }
           ]
         }
       ]
