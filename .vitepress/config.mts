@@ -6,6 +6,8 @@ export default defineConfig({
   description: "SeaRobot 产品技术文档",
   lang: 'zh-CN',
   base: '/searobot-docs/',
+  ignoreDeadLinks: true,  // 忽略死链接检查
+  srcExclude: ['temp/**/*'],  // 忽略temp目录下的所有文件
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
