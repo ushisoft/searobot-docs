@@ -30,7 +30,7 @@
    # 或者使用 yarn
    # yarn docs:dev
    ```
-   启动后，可通过浏览器访问 http://localhost:5173/searobot-docs/ 查看文档。
+   启动后，根据控制台提示地址访问文档内容。
 
 4. **构建静态文件**
    ```bash
