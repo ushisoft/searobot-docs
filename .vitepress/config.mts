@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "SeaRobot 文档中心",
-  description: "SeaRobot 产品技术文档",
+  title: "睿度文档中心",
+  description: "睿度智能产品技术文档",
   lang: 'zh-CN',
   base: '/searobot-docs/',
   srcExclude: ['temp/**/*'],  // 忽略temp目录下的所有文件
@@ -11,16 +11,16 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
-      { text: 'SeaRobot 01', link: '/searobot/' },
-      { text: 'APP 2.0.0', link: '/app/' },
-      { text: 'GT-01 Mini', link: '/gt01/' },
-      { text: 'RTK导航', link: '/rtk-navigation/' }
+      { text: 'DeepRobot01', link: '/searobot/' },
+      { text: 'DeepRobot01 配套软件', link: '/app/' },
+      { text: 'DeepRobot03', link: '/gt01/' },
+      { text: 'DeepRobot03 配套软件', link: '/rtk-navigation/' }
     ],
 
     sidebar: {
       '/searobot/': [
         {
-          text: 'SeaRobot 01 系列',
+          text: 'DeepRobot01 系列',
           items: [
             { text: '产品简介', link: '/searobot/introduction' },
             { text: '车体部件', link: '/searobot/components' },
@@ -33,7 +33,7 @@ export default defineConfig({
       ],
       '/app/': [
         {
-          text: 'APP 2.0.0',
+          text: 'DeepRobot01 配套软件',
           items: [
             { text: '注意事项', link: '/app/notices' },
             { text: '操作流程', link: '/app/process' },
@@ -48,7 +48,7 @@ export default defineConfig({
       ],
       '/gt01/': [
         {
-          text: 'GT-01 Mini 系列',
+          text: 'DeepRobot03 系列',
           items: [
             { text: '产品简介', link: '/gt01/introduction' },
             { text: '车体部件', link: '/gt01/components' },
@@ -62,7 +62,7 @@ export default defineConfig({
       ],
       '/rtk-navigation/': [
         {
-          text: 'RTK 导航界面',
+          text: 'DeepRobot03 配套软件',
           items: [
             { text: '使用须知', link: '/rtk-navigation/notices' },
             { text: '界面概述', link: '/rtk-navigation/overview' },
@@ -80,8 +80,8 @@ export default defineConfig({
     ],
 
     footer: {
-      message: '技术支持由 SeaRobot 团队提供',
-      copyright: 'Copyright © 2024 SeaRobot'
+      message: '技术支持由睿度智能科技提供',
+      copyright: 'Copyright © 2025 Ruidu Intelligence Technology'
     }
   }
 })

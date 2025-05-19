@@ -1,6 +1,6 @@
-# SeaRobot 01 系列文档
+# DeepRobot 01 系列文档
 
-欢迎查看 SeaRobot 01 系列产品文档。请从左侧目录选择您需要了解的内容：
+欢迎查看 DeepRobot 01 系列产品文档。请从左侧目录选择您需要了解的内容：
 
 - [产品简介](./introduction.md) - 了解产品概述和主要特点
 - [车体部件](./components.md) - 查看各部件的详细说明

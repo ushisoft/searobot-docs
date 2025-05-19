@@ -3,21 +3,21 @@
 layout: home
 
 hero:
-  name: "SeaRobot"
-  text: "智能机器人解决方案"
-  tagline: 为室内外全地形场景提供专业的自主移动机器人解决方案
+  name: "DeepMind"
+  text: "智能智能科技"
+  tagline: 为室内外全地形场景提供专业的自主移动无人车解决方案
   actions:
     - theme: brand
-      text: SeaRobot 01 文档
+      text: DeepMind01
       link: /searobot/introduction
     - theme: alt
-      text: APP 使用指南
+      text: DeepMind01 配套软件
       link: /app/notices
     - theme: brand
-      text: GT-01 Mini 文档
+      text: DeepMind03
       link: /gt01/introduction
     - theme: alt
-      text: RTK导航指南
+      text: DeepMind03 配套软件
       link: /rtk-navigation/notices
 
 features:
